@@ -1,0 +1,18 @@
+
+import cv2
+import os
+
+print("Current folder:", os.getcwd())
+
+img = cv2.imread("image.jpg.png")
+
+if img is None:
+    print("Image not found! Check image location.")
+else:
+    blur = cv2.GaussianBlur(img, (5, 5), 0)
+
+    cv2.imshow("Original Image", img)
+    cv2.imshow("Gaussian Blur", blur)
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
